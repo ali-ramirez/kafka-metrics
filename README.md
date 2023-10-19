@@ -1,9 +1,9 @@
 <p align="center">
-<a href="https://kafka.apache.org/" target="_blank"><img src="./images/logo/../logos/kafka-logo.png" alt="kafka Logo" width="150"/></a>
-<a href="https://prometheus.io/" target="_blank"><img src="./images/logos/prometheus-logo.png" alt="Prometheus logo" width="80"/></a>
-<a href="https://grafana.com/grafana/" target="_blank"><img src="./images/logos/grafana-logo.png" alt="Grafana logo" width="80"/></a>
-<a href="https://www.conduktor.io/" target="_blank"><img src="./images/logos/conduktor-logo.png" alt="Conduktor logo"  width="320"/></a>
-<a href="https://www.postgresql.org/" target="_blank"><img src="./images/logos/postgresql-logo.png" alt="Postgresql logo" width="80"/></a>
+<a href="https://kafka.apache.org/" target="_blank"><img src="./images/logos/kafka-logo.png" alt="kafka Logo" width="120" ></a>
+<a href="https://prometheus.io/" target="_blank"><img src="./images/logos/prometheus-logo.png" alt="Prometheus logo" width="120"/></a>
+<a href="https://grafana.com/grafana/" target="_blank"><img src="./images/logos/grafana-logo.png" alt="Grafana logo" width="120"/></a>
+<a href="https://www.conduktor.io/" target="_blank"><img src="./images/logos/conduktor-logo.png" alt="Conduktor logo"  width="140"/></a>
+<a href="https://www.postgresql.org/" target="_blank"><img src="./images/logos/postgresql-logo.png" alt="Postgresql logo" width="120"/></a>
 </p>
 
 # Apache kafka Métricas #
@@ -18,7 +18,7 @@ Entorno básico de configuración Métricas para  <a href="https://kafka.apache.
 
 Asegúrese de tener las últimas versiones de **Docker** y **Docker Compose** instaladas en su máquina.
 
-Clona este repositorio o copia los archivos de este repositorio en una nueva carpeta. En el archivo docker-compose.yml puede cambiar la dirección IP (en caso de que ejecute varios contenedores) o la base de datos de Postgresql.
+Clona este repositorio o copia los archivos de este repositorio en una nueva carpeta. En el archivo docker-compose.yml puede cambiar los puertos (en caso de que ejecute varios contenedores en su sistema).
 
 Con este proyecto puedes ejecutar rápidamente lo siguiente::
 
@@ -59,7 +59,7 @@ docker-compose -f docker-compose-single-config.yml up -d
 Esto pondrá en funcionamiento los contenedores y creara los volúmenes según configuración de sus `docker-compose.yml` archivos, asegurese de darle los permisos de escritura al directorio para que pueda crear los `volumenes` necesarios de los container.
 
 * `.env` – archivo que contiene los datos de las variables de entorno.
-* `volúmenes` – Carpeta que contiene los datos de los contenedores.
+* `volumenes` – Carpeta que contiene los datos de los contenedores.
 * `config` – Carpeta que contiene los archivos de configuración necesarios para el funcionamiento de los contenedores.
 
 Los contenedores ya están construidos y en funcionamiento. Debería poder acceder a la instalación de cada contenedor.
@@ -115,7 +115,7 @@ Para Agregar un nuevo Dashboard a **Grafana** selecione `New` seguido de `Import
 <p style="text-align: center;"><img src="./images/grafana-dashboard.png" width="800" alt="grafana"></p>
 </a>
 
-Una vez importado el archivo obtendrá la siguientes pantallas con multiples paneles y gráficos representando las métricas del cluster y brokers de **Apache Kafka**.
+Una vez importado el archivo obtendrá la siguientes pantallas con multiples paneles y gráficos representando las métricas del `cluster` y `brokers` de **Apache Kafka**.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-dashboard2.png" width="800" alt="grafana"></p>
