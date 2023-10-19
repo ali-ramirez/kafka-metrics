@@ -1,9 +1,9 @@
 <p align="center">
-<a href="https://kafka.apache.org/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Apache_kafka_wordtype.svg/2560px-Apache_kafka_wordtype.svg.png" alt="kafka Logo" width="150"/></a>
-<a href="https://prometheus.io/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/1200px-Prometheus_software_logo.svg.png" alt="Prometheus logo" width="80"/></a>
-<a href="https://grafana.com/grafana/" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/grafana_logo_icon_171048.png" alt="Grafana logo" width="80"/></a>
-<a href="https://www.conduktor.io/" target="_blank"><img src="https://lever-client-logos.s3.us-west-2.amazonaws.com/0222d088-897e-4d87-bfdc-98155af8f083-1665397778752.png" alt="Conduktor logo"  width="320"/></a>
-<a href="https://www.postgresql.org/" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_original_wordmark_logo_icon_146392.png" alt="Postgresql logo" width="80"/></a>
+<a href="https://kafka.apache.org/" target="_blank"><img src="./images/logo/../logos/kafka-logo.png" alt="kafka Logo" width="150"/></a>
+<a href="https://prometheus.io/" target="_blank"><img src="./images/logos/prometheus-logo.png" alt="Prometheus logo" width="80"/></a>
+<a href="https://grafana.com/grafana/" target="_blank"><img src="./images/logos/grafana-logo.png" alt="Grafana logo" width="80"/></a>
+<a href="https://www.conduktor.io/" target="_blank"><img src="./images/logos/conduktor-logo.png" alt="Conduktor logo"  width="320"/></a>
+<a href="https://www.postgresql.org/" target="_blank"><img src="./images/logos/postgresql-logo.png" alt="Postgresql logo" width="80"/></a>
 </p>
 
 # Apache kafka Métricas #
