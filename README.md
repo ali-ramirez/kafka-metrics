@@ -6,21 +6,22 @@
 <a href="https://www.postgresql.org/" target="_blank"><img src="./images/logos/postgresql-logo.png" alt="Postgresql logo" width="120"/></a>
 </p>
 
-# Apache kafka Métricas #
+# Apache kafka Métrics #
 
-Entorno básico de configuración Métricas para  <a href="https://kafka.apache.org/" target="blank">Apache kafka</a>.
+Basic Configuration Environment for <a href="https://kafka.apache.org/" target="blank">Apache kafka</a> Metrics and monitoring.
 
-## Descripción
+## Description
 
-<p align="center">Configuración Cluster de <a href="https://kafka.apache.org/" target="blank">Apache kafka</a> con visualización de métricas utilizando jmx exporter Agent, conexión <a href="https://prometheus.io/" target="blank">Prometheus</a>, <a href="https://grafana.com/grafana/" target="blank">Grafana</a> y <a href="https://www.conduktor.io/" target="blank">Conduktor</a> en contenedores <a href="https://docs.docker.com/compose/" target="blank">Docker</a>.</p>
 
-## Requerimientos
+<p align="center"><a href="https://kafka.apache.org/" target="blank">Apache kafka</a> Cluster Configuration with Metrics Visualization using JMX Exporter Agent, Connection and monitoring <a href="https://prometheus.io/" target="blank">Prometheus</a>, <a href="https://grafana.com/grafana/" target="blank">Grafana</a> and <a href="https://www.conduktor.io/" target="blank">Conduktor</a> in <a href="https://docs.docker.com/compose/" target="blank">Docker</a> Containers.</p>
 
-Asegúrese de tener las últimas versiones de **Docker** y **Docker Compose** instaladas en su máquina.
+## Requirements
 
-Clona este repositorio o copia los archivos de este repositorio en una nueva carpeta. En el archivo docker-compose.yml puede cambiar los puertos (en caso de que ejecute varios contenedores en su sistema).
+Make sure you have the latest versions of **Docker** and **Docker Compose** installed on your machine.
 
-Con este proyecto puedes ejecutar rápidamente lo siguiente::
+Clone this repository or copy the files from this repository into a new folder. In the docker-compose.yml file, you can change the ports (in case you're running multiple containers on your system).
+
+With this project, you can quickly run the following:
 
 - [Apache Kafka](https://hub.docker.com/r/confluentinc/cp-kafka)
 - [Prometheus](https://hub.docker.com/r/prom/prometheus)
@@ -28,53 +29,55 @@ Con este proyecto puedes ejecutar rápidamente lo siguiente::
 - [Conduktor](https://hub.docker.com/r/conduktor/conduktor-platform)
 - [Postgresql](https://hub.docker.com/_/postgres)
 
-Contenido:
+Contents:
 
-- [Apache kafka Métricas](#apache-kafka-métricas)
-  - [Descripción](#descripción)
-  - [Requerimientos](#requerimientos)
-  - [Configuración](#configuración)
-  - [Instalación](#instalación)
-  - [Uso](#uso)
+- [Apache kafka Métrics](#apache-kafka-métrics)
+  - [Description](#description)
+  - [Requirements](#requirements)
+  - [Configuration](#configuration)
+  - [Installation](#installation)
+  - [Use](#use)
     - [Prometheus](#prometheus)
     - [Grafana](#grafana)
     - [Conduktor](#conduktor)
   - [Licencia](#licencia)
 
 
-## Configuración
+## Configuration
 
-Edite el `.env` archivo para cambiar las variables de entorno predeterminadas.
+Edit the `.env` file to change the default environment variables.
 
-## Instalación
+## Installation
 
-Abra una terminal y ejecute `cd` hacia la carpeta en la que podrá ver los archivos  `docker-compose-single-config.yml` que contiene la configuración necesaria para desplegar un broker de kafka y el archivo `docker-compose-multiple-config.yml` que contiene la configuración para multiples broker de apache kafka.
+Open a terminal and run `cd` to the folder where you can see the files `docker-compose-single-config.yml`, which contains the necessary configuration to deploy a Kafka broker, and the file `docker-compose-multiple-config.yml`, which contains the configuration for multiple Apache Kafka brokers.
 
-según su necesidad ejecute:
+Execute as needed:
 
 ```
 docker-compose -f docker-compose-single-config.yml up -d  
 ```
 
-Esto pondrá en funcionamiento los contenedores y creara los volúmenes según configuración de sus `docker-compose.yml` archivos, asegurese de darle los permisos de escritura al directorio para que pueda crear los `volumenes` necesarios de los container.
+This will start the containers and create the volumes according to the configuration in your `docker-compose.yml` files. **Make sure to grant write permissions to the directory** so it can create the necessary volumes for the containers.
 
-* `.env` – archivo que contiene los datos de las variables de entorno.
-* `volumenes` – Carpeta que contiene los datos de los contenedores.
-* `config` – Carpeta que contiene los archivos de configuración necesarios para el funcionamiento de los contenedores.
+* `.env` – File containing the environment variable data.
+* `volumenes` – Folder containing container data.
+* `config` – Folder containing the configuration files necessary for the operation of the containers.
 
-Los contenedores ya están construidos y en funcionamiento. Debería poder acceder a la instalación de cada contenedor.
+The containers are already built and running. You should be able to access the installation of each container.
 
-## Uso
+## Use
 
 ### Prometheus
 
-Puede visitar `http:/localhost:9090` para acceder a **Prometheus** después de iniciar los contenedores y podrá ver una Pantalla como la siguiente donde tendra la opcion agregar paneles según sus `query` personalizadas.
+You can visit `http:/localhost:9090` to access **Prometheus** after starting the containers, and you will see a screen like the following, where you will have the option to add panels based on your custom `query`.
+
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/prometheus-home.png" width="800" alt="prometheus"></p>
 </a>
 
-En el menu de Status -> `targets` podrá ver el estado de sus **broker** de **Apache kafka**.
+In the Status menu, you can see the status of your **Apache kafka broker** under `targets`.
+
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/prometheus-state.png" width="800" alt="prometheus"></p>
@@ -82,40 +85,39 @@ En el menu de Status -> `targets` podrá ver el estado de sus **broker** de **Ap
 
 ### Grafana
 
-Puede Visitar `http:/localhost:3000` para acceder a **Grafana**
-El nombre de usuario predeterminado es **admin**, datos que se proporciona en el `.env` archivo, el password es **admin** una vez iniciado le pedirá crear una nueva password.
+You can visit `http:/localhost:3000` to access Grafana. The default username is **admin**, which is provided in the `.env` file, and the password is **admin**. Once you log in, it will prompt you to create a new password.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-login.png" width="800" alt="grafana"></p>
 </a>
 
-Una vez iniciada la sesión vera una pantalla como la siguiente:
+Once logged in, you will see a screen like the following:
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-home.png" width="800" alt="grafana"></p>
 </a>
 
-Donde deberá agregar su fuente de datos de **Prometheus** como se indica en la imagen.
+Where you will need to add your **Prometheus** data source as shown in the image.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-datasource.png" width="800" alt="grafana"></p>
 </a>
 
-Seleccionara **Prometheus** como su fuente de datos.
+You will select **Prometheus** as your data source.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-datasource2.png" width="800" alt="grafana"></p>
 </a>
 
-Tendra que llenar los datos de su conexión del contenedor de **Prometheus**.
+You will need to fill in the connection details for your **Prometheus** container.
 
-Para Agregar un nuevo Dashboard a **Grafana** selecione `New` seguido de `Import` donde elegirá el Archivo `dashboard-kafka.json`que se encuentra en la carpeta `config` el cual esta configurado para la visualización de las métricas de **Kafka**.
+To add a new dashboard to **Grafana**, select `New`, followed by `Import`, where you will choose the `dashboard-kafka.json` file located in the `config` folder, which is configured for the visualization of **Kafka metrics**.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-dashboard.png" width="800" alt="grafana"></p>
 </a>
 
-Una vez importado el archivo obtendrá la siguientes pantallas con multiples paneles y gráficos representando las métricas del `cluster` y `brokers` de **Apache Kafka**.
+Once the file is imported, you will obtain the following screens with multiple panels and graphs representing the metrics of the **Apache Kafka** `cluster` and `brokers`.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/grafana-dashboard2.png" width="800" alt="grafana"></p>
@@ -129,14 +131,13 @@ Una vez importado el archivo obtendrá la siguientes pantallas con multiples pan
 
 ### Conduktor 
 
-Puede Visitar `http:/localhost:8080` para acceder a **Conduktor**
-El nombre de usuario predeterminado es **admin@admin.io**, el password es **admin** las credenciales puede modificarlas en las variables de entorno que se encuentran en el `.env` archivo.
+You can visit `http:/localhost:8080` to access **Conduktor**. The default username is **admin@admin.io**, and the password is **admin**. You can modify these credentials in the environment variables located in the `.env` file.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/conduktor-login.png" width="800" alt="conduktor"></p>
 </a>
 
-La herramienta **Conduktor** le permitirá ver el estatus del `cluster` como también visualizar los `brokers` que tenga desplegados de **Apache Kafka**.
+The **Conduktor** tool will allow you to view the status of the cluster as well as visualize the **Apache Kafka** `brokers` you have deployed.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/conduktor-cluster.png" width="800" alt="conduktor"></p>
@@ -146,7 +147,7 @@ La herramienta **Conduktor** le permitirá ver el estatus del `cluster` como tam
 <p style="text-align: center;"><img src="./images/conduktor-brokers.png" width="800" alt="conduktor"></p>
 </a>
 
-**Conduktor** le sera util para realizar las pruebas necesarias y administración de  **Apache Kafka** de forma visual,  podrá crear nuevos topic,  como también enviar y consumir mensajes.
+**Conduktor** will be useful for conducting the necessary tests and visually managing **Apache Kafka**. You will be able to create new `topics` and send/consume `messages`.
 
 <a href="https://github.com/ali-ramirez/kafka-metrics" rel="noreferrer">
 <p style="text-align: center;"><img src="./images/conduktor-topic.png" width="800" alt="conduktor"></p>
