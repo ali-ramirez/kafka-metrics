@@ -121,3 +121,4 @@ volumes:
   kafka1: {}
   pg_data: {}
   conduktor_data: {}
+  grafana: {}
